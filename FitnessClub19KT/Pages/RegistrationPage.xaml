@@ -1,0 +1,48 @@
+﻿<Page x:Class="FitnessClub19KT.Pages.RegistrationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:FitnessClub19KT.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="400"
+      Title="RegistrationPage">
+
+    <Grid>
+        <StackPanel HorizontalAlignment="Center">
+            <TextBlock Text="Логин" Foreground="#696969" 
+                            FontFamily="Bahnschrift SemiBold SemiCondensed"
+                            FontSize="22" />
+            <TextBox Style="{DynamicResource TbStyle}" x:Name="TbLoginReg" Width="250" 
+                            Height="30" MaxLength="20"
+                            FontSize="22" Margin="0 5 0 0"/>
+            <TextBlock Text="Пароль" Foreground="#696969" 
+                        FontFamily="Bahnschrift SemiBold SemiCondensed"
+                        FontSize="22" Margin="0 5 0 0"/>
+            <PasswordBox Style="{DynamicResource PasswordBoxStyle}" x:Name="PbPasswordReg"
+                        Foreground="#696969"
+                        Height="30" MaxLength="20"
+                        FontSize="20" 
+                        Padding="-3" Margin="0 5 0 0"/>
+            <TextBlock Text="Повторите пароль" Foreground="#696969"
+                       FontFamily="Bahnschrift SemiBold SemiCondensed"
+                       FontSize="22" Margin="0 5 0 0"/>
+            <PasswordBox Style="{DynamicResource PasswordBoxStyle}" x:Name="PbRepetPasswordReg"
+                        Foreground="#696969"
+                        Height="30" MaxLength="20"
+                        FontSize="20"  Margin="0 5 0 0" 
+                        Padding="-3"/>
+            <TextBlock Text="Электронная почта" Foreground="#696969"
+                       FontFamily="Bahnschrift SemiBold SemiCondensed"
+                       FontSize="22" Margin="0 5 0 0"/>
+            <TextBox Style="{DynamicResource TbStyle}" x:Name="TbEmail" Width="250" 
+                            Height="30" MaxLength="20"
+                            FontSize="22" Margin="0 5 0 0"/>
+            <Button Style="{DynamicResource BtnStyle}" x:Name="btnSignUn" Content="ЗАРЕГЕСТРИРОВАТЬСЯ"
+                 Height="60" Width="200"
+                 FontFamily="Bahnschrift SemiBold SemiCondensed"
+                 FontSize="16"
+                 Grid.Row="3" Click="btnSignUn_Click" Margin="0 120 0 0"/>
+        </StackPanel>
+    </Grid>
+</Page>

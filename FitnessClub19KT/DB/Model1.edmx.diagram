@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="633a6d0b1055499485b9dc20a809703e" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="FitnessClubModel.Admin" Width="1.5" PointX="5.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FitnessClubModel.Authorization" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FitnessClubModel.ClientService" Width="1.5" PointX="8.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FitnessClubModel.Gender" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FitnessClubModel.Invertory" Width="1.5" PointX="7.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FitnessClubModel.Person" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FitnessClubModel.Role" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FitnessClubModel.Service" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FitnessClubModel.sysdiagrams" Width="1.5" PointX="9.75" PointY="7.5" IsExpanded="true" />
+        <AssociationConnector Association="FitnessClubModel.FK_Authorization_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="FitnessClubModel.FK_Authorization_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="FitnessClubModel.FK_ClientService_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="FitnessClubModel.FK_ClientService_Service" ManuallyRouted="false" />
+        <AssociationConnector Association="FitnessClubModel.FK_Client_Gender" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,68 @@
+﻿<Window x:Class="FitnessClub19KT.Windows.AuthWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FitnessClub19KT.Windows"
+        mc:Ignorable="d"
+         Title="AuthWindow" Height="725" Width="400"
+        AllowsTransparency="True" Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize" WindowStyle="None" >
+    <Border CornerRadius="25">
+        <Border.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF0A0C10" Offset="0.72"/>
+                <GradientStop Color="#FF181F2D" Offset="0.224"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="150"/>
+                <RowDefinition Height="450"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            <Grid x:Name="ToolBar" Background="Transparent"  MouseDown="ToolBar_MouseDown">
+                <StackPanel Grid.Row="0" HorizontalAlignment="Right"
+                            Orientation="Horizontal">
+                    <Image x:Name="ButtonMinimize" Source="/Assets/Minimize.png"
+                           Height="25" Width="25" Margin="0 0 5 0"
+                           MouseDown="ButtonMinimize_MouseDown">
+
+                    </Image>
+
+                    <Image x:Name="ButtonExit" Source="/Assets/Exit.png"
+                           Height="25" Width="25"
+                           MouseDown="ButtonExit_MouseDown" Margin="0 0 20 0"></Image>
+
+                </StackPanel>
+            </Grid>
+            <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Frame x:Name="FrAuthReg" NavigationUIVisibility="Hidden"/>
+                
+            </StackPanel>
+
+            <!--<StackPanel Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center">--> 
+             
+            <TextBlock x:Name="TblReg" Grid.Row="3"  HorizontalAlignment="Center"
+                 VerticalAlignment="Bottom" Margin="0 0 103 80 "
+                 Text="Зарегестироваться" Foreground="#696969" 
+                 FontFamily="Bahnschrift SemiBold SemiCondensed"
+                 MouseDown="TblReg_MouseDown"/>
+            <TextBlock  Grid.Row="3" HorizontalAlignment="Center"
+                 VerticalAlignment="Bottom" Margin="0 0 -103 80 " 
+                 Text="Уже есть аккаунт?"
+                 Foreground="#696969"  
+                 FontFamily="Bahnschrift SemiBold SemiCondensed"
+                 MouseDown="TblReg_MouseDown"/>
+            <TextBlock x:Name="TblLog" Grid.Row="3" HorizontalAlignment="Center"
+                 VerticalAlignment="Bottom" Margin="0 0 -103 65 " 
+                 Text="Войти"
+                 Foreground="#696969"  
+                 FontFamily="Bahnschrift SemiBold SemiCondensed"
+                 MouseDown="TblLog_MouseDown"/>
+
+        </Grid>
+    </Border>
+</Window>
