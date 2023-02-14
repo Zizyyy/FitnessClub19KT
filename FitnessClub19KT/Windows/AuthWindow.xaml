@@ -21,7 +21,7 @@
                 <RowDefinition Height="25"/>
                 <RowDefinition Height="150"/>
                 <RowDefinition Height="450"/>
-                <RowDefinition Height="100"/>
+                <RowDefinition Height="150"/>
             </Grid.RowDefinitions>
             <Grid x:Name="ToolBar" Background="Transparent"  MouseDown="ToolBar_MouseDown">
                 <StackPanel Grid.Row="0" HorizontalAlignment="Right"
@@ -40,29 +40,21 @@
             </Grid>
             <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Frame x:Name="FrAuthReg" NavigationUIVisibility="Hidden"/>
-                
+
             </StackPanel>
 
-            <!--<StackPanel Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center">--> 
-             
             <TextBlock x:Name="TblReg" Grid.Row="3"  HorizontalAlignment="Center"
-                 VerticalAlignment="Bottom" Margin="0 0 103 80 "
-                 Text="Зарегестироваться" Foreground="#696969" 
-                 FontFamily="Bahnschrift SemiBold SemiCondensed"
-                 MouseDown="TblReg_MouseDown"/>
-            <TextBlock  Grid.Row="3" HorizontalAlignment="Center"
-                 VerticalAlignment="Bottom" Margin="0 0 -103 80 " 
-                 Text="Уже есть аккаунт?"
-                 Foreground="#696969"  
-                 FontFamily="Bahnschrift SemiBold SemiCondensed"
-                 MouseDown="TblReg_MouseDown"/>
-            <TextBlock x:Name="TblLog" Grid.Row="3" HorizontalAlignment="Center"
-                 VerticalAlignment="Bottom" Margin="0 0 -103 65 " 
-                 Text="Войти"
-                 Foreground="#696969"  
-                 FontFamily="Bahnschrift SemiBold SemiCondensed"
-                 MouseDown="TblLog_MouseDown"/>
+                     VerticalAlignment="Bottom" Margin="10 0 160 130 "
+                     Text="Добавить" Foreground="#696969" 
+                     FontFamily="Bahnschrift SemiBold SemiCondensed"
+                     MouseDown="TblReg_MouseDown"/>
 
+            <TextBlock x:Name="TblLog" Grid.Row="3" HorizontalAlignment="Left"
+                     VerticalAlignment="Bottom" Margin="265 ,0 , 0,130" 
+                     Text="Назад"
+                     Foreground="#696969"  
+                     FontFamily="Bahnschrift SemiBold SemiCondensed"
+                     MouseDown="TblLog_MouseDown"/>
         </Grid>
     </Border>
 </Window>

@@ -13,6 +13,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using FitnessClub19KT.DB;
+using FitnessClub19KT.Pages;
+using FitnessClub19KT.ClassHelper;
+
 namespace FitnessClub19KT.Pages
 {
     /// <summary>
