@@ -5,20 +5,22 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="633a6d0b1055499485b9dc20a809703e" Name="Diagram1" ZoomLevel="86">
-        <EntityTypeShape EntityType="FitnessClubModel.Admin" Width="1.5" PointX="5.75" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="FitnessClubModel.Authorization" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="FitnessClubModel.ClientService" Width="1.5" PointX="8.25" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="FitnessClubModel.Gender" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="FitnessClubModel.Invertory" Width="1.5" PointX="7.75" PointY="7.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="FitnessClubModel.Person" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="FitnessClubModel.Role" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="FitnessClubModel.Service" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="FitnessClubModel.sysdiagrams" Width="1.5" PointX="9.75" PointY="7.5" IsExpanded="true" />
-        <AssociationConnector Association="FitnessClubModel.FK_Authorization_Person" ManuallyRouted="false" />
-        <AssociationConnector Association="FitnessClubModel.FK_Authorization_Role" ManuallyRouted="false" />
-        <AssociationConnector Association="FitnessClubModel.FK_ClientService_Client" ManuallyRouted="false" />
-        <AssociationConnector Association="FitnessClubModel.FK_ClientService_Service" ManuallyRouted="false" />
-        <AssociationConnector Association="FitnessClubModel.FK_Client_Gender" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="FitnessClubModel.Admin" Width="1.5" PointX="5.75" PointY="8.25" />
+        <EntityTypeShape EntityType="FitnessClubModel.Authorization" Width="1.5" PointX="5.25" PointY="4.375" />
+        <EntityTypeShape EntityType="FitnessClubModel.Client" Width="1.5" PointX="3" PointY="7.875" />
+        <EntityTypeShape EntityType="FitnessClubModel.ClientService" Width="1.5" PointX="8.25" PointY="4.375" />
+        <EntityTypeShape EntityType="FitnessClubModel.Gender" Width="1.5" PointX="0.75" PointY="6.375" />
+        <EntityTypeShape EntityType="FitnessClubModel.Invertory" Width="1.5" PointX="7.75" PointY="8.25" />
+        <EntityTypeShape EntityType="FitnessClubModel.Person" Width="1.5" PointX="3" PointY="4" />
+        <EntityTypeShape EntityType="FitnessClubModel.Role" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="FitnessClubModel.Service" Width="1.5" PointX="6" PointY="1.625" />
+        <EntityTypeShape EntityType="FitnessClubModel.sysdiagrams" Width="1.5" PointX="9.75" PointY="8.25" />
+        <AssociationConnector Association="FitnessClubModel.FK_Authorization_Person" />
+        <AssociationConnector Association="FitnessClubModel.FK_Authorization_Role" />
+        <AssociationConnector Association="FitnessClubModel.FK_Client_Gender" />
+        <AssociationConnector Association="FitnessClubModel.FK_ClientService_Client" />
+        <AssociationConnector Association="FitnessClubModel.FK_ClientService_Service" />
+        <AssociationConnector Association="FitnessClubModel.FK_Person_Gender" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
