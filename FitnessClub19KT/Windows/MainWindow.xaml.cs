@@ -24,7 +24,7 @@ namespace FitnessClub19KT
         {
             InitializeComponent();
         }
-
+        //
         private void ToolBar_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if(e.ChangedButton == MouseButton.Left )
