@@ -10,27 +10,27 @@
 
     <Grid>
         <StackPanel HorizontalAlignment="Center" Margin="0 70 0 0">
-        <TextBlock Text="Логин" 
-                        Foreground="#696969" 
-                        FontFamily="Bahnschrift SemiBold SemiCondensed"
-                        FontSize="22"/>
-                <TextBox Style="{DynamicResource TbStyle}" x:Name="TbLogin" Width="250" 
-                        Height="30" MaxLength="20"
-                        FontSize="22"/>
-                <TextBlock Text="Пароль"
-                        Foreground="#696969"
-                        FontFamily="Bahnschrift SemiBold SemiCondensed"
-                        FontSize="22" />
-                <PasswordBox Style="{DynamicResource PasswordBoxStyle}" x:Name="PbPassword"
-                        Foreground="#696969" Width="250" 
-                        Height="30" MaxLength="20"
-                        FontSize="20" 
-                        Padding="-3"/>
+            <TextBlock Text="Логин" 
+                            Foreground="#696969" 
+                            FontFamily="Bahnschrift SemiBold SemiCondensed"
+                            FontSize="22"/>
+            <TextBox Style="{DynamicResource TbStyle}" x:Name="TbLogin" Width="250" 
+                            Height="30" MaxLength="20"
+                            FontSize="22"/>
+            <TextBlock Text="Пароль"
+                            Foreground="#696969"
+                            FontFamily="Bahnschrift SemiBold SemiCondensed"
+                            FontSize="22" />
+            <PasswordBox Style="{DynamicResource PasswordBoxStyle}" x:Name="PbPassword"
+                            Foreground="#696969" Width="250" 
+                            Height="30" MaxLength="20"
+                            FontSize="20" 
+                            Padding="-3"/>
             <Button Style="{DynamicResource BtnStyle}" x:Name="btnSignIn" Content="ВОЙТИ"
-                 Height="60" Width="200"
-                 FontFamily="Bahnschrift SemiBold SemiCondensed"
-                 FontSize="20"
-                 Grid.Row="3" Click="btnSignIn_Click" Margin="0 200 0 0"/>
+                     Height="60" Width="200"
+                     FontFamily="Bahnschrift SemiBold SemiCondensed"
+                     FontSize="20"
+                     Grid.Row="3" Click="btnSignIn_Click" Margin="0 0200 0 0"/>
         </StackPanel>
     </Grid>
 </Page>

@@ -38,11 +38,11 @@
 
                 </StackPanel>
             </Grid>
+
             <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Frame x:Name="FrAuthReg" NavigationUIVisibility="Hidden"/>
-
             </StackPanel>
-
+            
             <TextBlock x:Name="TblReg" Grid.Row="3"  HorizontalAlignment="Center"
                      VerticalAlignment="Bottom" Margin="10 0 160 130 "
                      Text="Добавить" Foreground="#696969" 
