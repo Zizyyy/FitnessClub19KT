@@ -9,42 +9,75 @@
       Title="RegistrationPage">
 
     <Grid>
-        <StackPanel HorizontalAlignment="Center">
-            <TextBlock Text="Логин" Foreground="#696969" 
-                            FontFamily="Bahnschrift SemiBold SemiCondensed"
-                            FontSize="22" />
-            <TextBox Style="{DynamicResource TbStyle}" x:Name="TbLoginReg" Width="250" 
-                            Height="30" MaxLength="20"
-                            FontSize="22" Margin="0 5 0 0"/>
-            <TextBlock Text="Пароль" Foreground="#696969" 
-                        FontFamily="Bahnschrift SemiBold SemiCondensed"
-                        FontSize="22" Margin="0 5 0 0"/>
-            <PasswordBox Style="{DynamicResource PasswordBoxStyle}" x:Name="PbPasswordReg"
-                        Foreground="#696969"
-                        Height="30" MaxLength="20"
-                        FontSize="20" 
-                        Padding="-3" Margin="0 5 0 0"/>
-            <TextBlock Text="Повторите пароль" Foreground="#696969"
-                       FontFamily="Bahnschrift SemiBold SemiCondensed"
-                       FontSize="22" Margin="0 5 0 0"/>
-            <PasswordBox Style="{DynamicResource PasswordBoxStyle}" x:Name="PbRepetPasswordReg"
-                        Foreground="#696969"
-                        Height="30" MaxLength="20"
-                        FontSize="20"  Margin="0 5 0 0" 
-                        Padding="-3"/>
-            <TextBlock Text="Электронная почта" Foreground="#696969"
-                       FontFamily="Bahnschrift SemiBold SemiCondensed"
-                       FontSize="22" Margin="0 5 0 0"/>
-            <TextBox Style="{DynamicResource TbStyle}" x:Name="TbEmail" Width="250" 
-                            Height="30" MaxLength="20"
-                            FontSize="22" Margin="0 5 0 0"/>
-            <Button Style="{DynamicResource BtnStyle}" x:Name="btnSignUn" 
-                    Content="ДОБАВИТЬ"
-                    Height="60" Width="200"
-                    FontFamily="Bahnschrift SemiBold SemiCondensed"
-                    FontSize="16"
-                    Grid.Row="3" Click="btnSignUn_Click" Margin="0 120 0 0"/>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+            <TextBlock Text="Фамилия" Foreground="#696969" 
+                   FontFamily="Bahnschrift SemiBold SemiCondensed"
+                   FontSize="22" />
+            <TextBox x:Name="TbFirstName" Style="{DynamicResource TbStyle}" 
+                     Width="195" 
+                     Height="30" MaxLength="50"
+                     FontSize="22"/>
+            <TextBlock Text="Имя" Foreground="#696969" 
+                   FontFamily="Bahnschrift SemiBold SemiCondensed"
+                   FontSize="22" />
+            <TextBox x:Name="TbLastName" Style="{DynamicResource TbStyle}" 
+                 Width="195" 
+                 Height="30" MaxLength="50"
+                 FontSize="22"/>
+            <TextBlock Text="Отчество" Foreground="#696969"
+                       FontFamily="Bahnschrift Semibold Semi Condesed"
+                       FontSize="22"/>
+            <TextBox x:Name="TbPatronymic" Style="{DynamicResource TbStyle}"
+                     Width="195" Height="30"
+                     MaxLength="50" FontSize="22"/>
         </StackPanel>
+
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+            <TextBlock Text="Дата рождения" Foreground="#696969"
+                       FontFamily="Bahnschrift Semibold SemiCondensed"
+                       FontSize="22"/>
+            <DatePicker x:Name="DpBirthday"
+                        Height="30" Width="200">
+
+            </DatePicker>
+            <TextBlock Text="Номер" Foreground="#696969"
+                       FontFamily="Bahnschrift Semibold SemiCondensed"
+                       FontSize="22"/>
+            <TextBox x:Name="TbPhone" Style="{DynamicResource TbStyle}"
+                     Width="200" Height="30"
+                     FontSize="20"/>
+            <TextBlock Text="Пол" Foreground="#696969"
+                       FontFamily="Bahnschrift Semibold SemiCondensed"
+                       FontSize="22"/>
+            <ComboBox Style="{DynamicResource ComboBoxStyle}" 
+                      x:Name="CmbGender"
+                      Width="195"
+                      Height="30" FontSize="22" 
+                      FontFamily="Bahnschrift Semibold SemiCondensed"
+                      Foreground="#696969"/>
+
+        </StackPanel>
+        <TextBlock Text="Электронная почта" Grid.ColumnSpan="2"
+                   Foreground="#696969"
+                   FontFamily="Bahnschrift Semibold SemiCondensed"
+                   FontSize="22"
+                   Margin="0 175 0 0"/>
+        <TextBox x:Name="TbEmail" Grid.ColumnSpan="2"
+                 Style="{DynamicResource TbStyle}"
+                 Width="397" Height="30"
+                 FontSize="20"/>
+
+        <Button Style="{DynamicResource BtnStyle}" 
+                x:Name="BtnAdd" 
+                Content="ДОБАВИТЬ"
+                Height="60" Width="200"
+                FontFamily="Bahnschrift SemiBold SemiCondensed"
+                FontSize="20"
+                Grid.ColumnSpan="2" 
+                Margin="0 380 0 0" Click="BtnAdd_Click"/>
     </Grid>
 </Page>

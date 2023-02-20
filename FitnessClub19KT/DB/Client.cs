@@ -12,28 +12,17 @@ namespace FitnessClub19KT.DB
     using System;
     using System.Collections.Generic;
     
-    public partial class Person
+    public partial class Client
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Person()
-        {
-            this.Authorization = new HashSet<Authorization>();
-            this.ClientService = new HashSet<ClientService>();
-        }
-    
-        public int IdPerson { get; set; }
+        public int IdClient { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Patronymic { get; set; }
-        public int IdGender { get; set; }
-        public System.DateTime Birthday { get; set; }
+        public System.DateTime BirthdayDate { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
+        public int IdGender { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Authorization> Authorization { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ClientService> ClientService { get; set; }
         public virtual Gender Gender { get; set; }
     }
 }

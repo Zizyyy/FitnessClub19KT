@@ -29,6 +29,7 @@ namespace FitnessClub19KT.DB
     
         public virtual DbSet<Admin> Admin { get; set; }
         public virtual DbSet<Authorization> Authorization { get; set; }
+        public virtual DbSet<Client> Client { get; set; }
         public virtual DbSet<ClientService> ClientService { get; set; }
         public virtual DbSet<Gender> Gender { get; set; }
         public virtual DbSet<Invertory> Invertory { get; set; }
