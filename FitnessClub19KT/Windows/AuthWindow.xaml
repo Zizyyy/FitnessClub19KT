@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FitnessClub19KT.Windows"
         mc:Ignorable="d"
          Title="AuthWindow" Height="725" Width="400"
-        AllowsTransparency="True" Background="Transparent"
+        AllowsTransparency="True" Background="{x:Null}"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize" WindowStyle="None" >
     <Border CornerRadius="25">

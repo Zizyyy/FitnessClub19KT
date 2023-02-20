@@ -24,5 +24,23 @@ namespace FitnessClub19KT
         {
             InitializeComponent();
         }
+
+        private void ToolBar_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if(e.ChangedButton == MouseButton.Left )
+            {
+                this.DragMove();
+            }
+        }
+
+        private void ButtonExit_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ButtonMinimize_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
     }
 }

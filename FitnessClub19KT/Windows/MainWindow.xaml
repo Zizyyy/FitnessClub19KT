@@ -5,8 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub19KT"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="MainWindow" Height="450" Width="800" Background="{x:Null}"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize" WindowStyle="None" >
+    <Border Background="#FF1B2838"
+            CornerRadius="25">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="75"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+
+            <Grid x:Name="ToolBar" Background="Transparent" MouseDown="ToolBar_MouseDown">
+                <StackPanel Grid.Row="0" HorizontalAlignment="Right"
+                            Orientation="Horizontal">
+                    <Image x:Name="ButtonMinimize" Source="/Assets/Minimize.png"
+                           Height="25" Width="25" Margin="0 0 5 0"
+                           MouseDown="ButtonMinimize_MouseDown">
+
+                    </Image>
+
+                    <Image x:Name="ButtonExit" Source="/Assets/Exit.png"
+                           Height="25" Width="25"
+                           MouseDown="ButtonExit_MouseDown" Margin="0 0 20 0">
+
+                    </Image>
+
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+
 </Window>
