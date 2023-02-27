@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FitnessClub19KT.Pages.ComponentsService;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using FitnessClub19KT.Pages;
+using FitnessClub19KT.ClassHelper;
+using FitnessClub19KT.DB;
+using FitnessClub19KT.Windows;
+
 namespace FitnessClub19KT
 {
     /// <summary>
@@ -23,6 +29,7 @@ namespace FitnessClub19KT
         public MainWindow()
         {
             InitializeComponent();
+            FrListService.Content = new ListServicePage();
         }
         //
         private void ToolBar_MouseDown(object sender, MouseButtonEventArgs e)
@@ -41,6 +48,20 @@ namespace FitnessClub19KT
         private void ButtonMinimize_MouseDown(object sender, MouseButtonEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
+        }
+
+        private void BtnAddEdit_Click(object sender, RoutedEventArgs e)
+        {
+            //FrListService.Content = new AddEditServicePage();
+            this.Close();
+
+            AddEditService addEditService = new AddEditService();
+            addEditService.Show();
+        }
+
+        private void BtnServiceList_Click(object sender, RoutedEventArgs e)
+        {
+            FrListService.Content = new ListServicePage();
         }
     }
 }

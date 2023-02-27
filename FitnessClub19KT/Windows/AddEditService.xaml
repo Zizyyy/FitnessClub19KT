@@ -1,0 +1,123 @@
+﻿<Window x:Class="FitnessClub19KT.Windows.AddEditService"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FitnessClub19KT.Windows"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="600" Background="{x:Null}"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize" WindowStyle="None" >
+    <Border Background="#FF1B2838"
+            CornerRadius="25">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid x:Name="ToolBar" Background="Transparent" MouseDown="ToolBar_MouseDown">
+                <StackPanel Grid.Row="0" HorizontalAlignment="Right"
+                            Orientation="Horizontal">
+                    <Image x:Name="ButtonMinimize" Source="/Assets/Minimize.png"
+                           Height="25" Width="25" Margin="0 0 5 0"
+                           MouseDown="ButtonMinimize_MouseDown">
+
+                    </Image>
+
+                    <Image x:Name="ButtonExit" Source="/Assets/Exit.png"
+                           Height="25" Width="25"
+                           MouseDown="ButtonExit_MouseDown" Margin="0 0 20 0">
+                    </Image>
+                </StackPanel>
+            </Grid>
+
+                <ScrollViewer Grid.Row="1">
+            <StackPanel Grid.Row="1"
+                    HorizontalAlignment="Center">
+                <TextBlock x:Name="TblTitleWindow"
+                           Text="Добавление"
+                           FontSize="24"
+                           Style="{DynamicResource TblStyle}"
+                           HorizontalAlignment="Center"
+                           Margin="0 0 0 10"/>
+                    <Border BorderBrush="Black"
+                        BorderThickness="0.5"
+                        CornerRadius="5">
+                        <Image x:Name="ImgService"
+                            Width="150"
+                            Height="190"/>
+                    </Border>
+                    <Button  x:Name="BtnChooseImage"
+                         Style="{DynamicResource BtnStyle}"
+                         Width="200"
+                         Height="45"
+                         Content="ВЫБРАТЬ ФОТО"
+                         FontFamily="Bahnschrift SemiBold SemiCondensed"
+                         Margin="0 5 0 0" Click="BtnChooseImage_Click"/>
+
+                    <TextBlock Text="Введите наименование услуги"
+                           Style="{DynamicResource TblStyle}"
+                           Margin="0 5 0 0"/>
+                    <TextBox x:Name="TbTitleService"
+                         Style="{DynamicResource TbStyle}"
+                         Height="Auto"
+                         Width="200"
+                         Margin="0 5 0 0"
+                         TextWrapping="Wrap"
+                         Padding="0 5 0 5"
+                         FontSize="18"/>
+                    <TextBlock Text="Введите стоимость услуги"
+                           Style="{DynamicResource TblStyle}"
+                           Margin="0 5 0 0"/>
+                    <TextBox x:Name="TbCostService"
+                         Style="{DynamicResource TbStyle}"
+                         Width="200"
+                         Height="Auto"
+                         Margin="0 5 0 0"
+                         TextWrapping="Wrap"
+                         Padding="0 5 0 5"
+                         FontSize="18"/>
+                    <TextBlock Text="Введите длительность услуги"
+                           Style="{DynamicResource TblStyle}"
+                           Margin="0 5 0 0"/>
+                    <TextBox x:Name="TbDurationService"
+                         Style="{DynamicResource TbStyle}"
+                         Width="200"
+                         Height="Auto"
+                         Margin="0 5 0 0"
+                         TextWrapping="Wrap"
+                         Padding="0 5 0 5"
+                         FontSize="18"/>
+                    <TextBlock Text="Введите описание услуги"
+                           Style="{DynamicResource TblStyle}"
+                           Margin="0 5 0 0"/>
+                    <TextBox x:Name="TbDescripService"
+                         Style="{DynamicResource TbStyle}"
+                         Width="200"
+                         Height="Auto"
+                         Margin="0 5 0 0"
+                         TextWrapping="Wrap"
+                         Padding="0 5 0 5"
+                         FontSize="18"/>
+                    <Button x:Name="BtnAddEdit"
+                         Grid.Row="1"
+                         Style="{DynamicResource BtnStyle}"
+                         Width="200"
+                         Height="45"
+                         Content="ДОБАВИТЬ"
+                         FontFamily="Bahnschrift SemiBold SemiCondensed"
+                         Click="BtnAddEdit_Click"
+                         Margin="0 15 0 0"/>
+                <TextBlock x:Name="TblLog" Grid.Row="3" HorizontalAlignment="Left"
+                         VerticalAlignment="Bottom" Margin="170 10 0 0" 
+                         Text="Назад"
+                         Foreground="#696969"  
+                         FontFamily="Bahnschrift SemiBold SemiCondensed"
+                         MouseDown="TblBack_MouseDown"/>
+            </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Border>
+</Window>

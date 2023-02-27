@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 
 using FitnessClub19KT.DB;
 using FitnessClub19KT.ClassHelper;
+using FitnessClub19KT.Windows;
 
 namespace FitnessClub19KT.Pages
 {
@@ -40,7 +41,7 @@ namespace FitnessClub19KT.Pages
             }
             else
             {
-                MessageBox.Show("Пользователь не найден");
+                MessageBox.Show("Логин или пароль неправильный","Ошибка авторизации",MessageBoxButton.OK,MessageBoxImage.Error);
             }
         }
     }

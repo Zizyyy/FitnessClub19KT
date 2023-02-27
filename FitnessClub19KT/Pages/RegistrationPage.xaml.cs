@@ -38,27 +38,27 @@ namespace FitnessClub19KT.Pages
         {
             if (string.IsNullOrWhiteSpace(TbFirstName.Text))
             {
-                MessageBox.Show("Поле \"Фамилия\" не может быть пустым.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Поле \"Фамилия\" не может быть пустым.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             if(string.IsNullOrWhiteSpace(TbLastName.Text))
             {
-                MessageBox.Show("Поле \"Имя\" не может быть пустым.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Поле \"Имя\" не может быть пустым.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             if (string.IsNullOrWhiteSpace(TbPhone.Text))
             {
-                MessageBox.Show("Поле \"Телефон\" не может быть пустым.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Поле \"Телефон\" не может быть пустым.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             if (string.IsNullOrWhiteSpace(TbEmail.Text))
             {
-                MessageBox.Show("Поле \"Электронная почта\" не может быть пустым.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Поле \"Электронная почта\" не может быть пустым.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             if (string.IsNullOrWhiteSpace(DpBirthday.Text))
             {
-                MessageBox.Show("Поле \"Дата рождения\" не может быть пустым.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Поле \"Дата рождения\" не может быть пустым.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
