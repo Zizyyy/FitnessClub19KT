@@ -15,4 +15,16 @@
 
 <p><b>Регистрация</b></p>
 
-![image](https://user-images.githubusercontent.com/114442750/218549464-b707add1-8418-4f37-8478-149491aafee7.png)
+![image](https://user-images.githubusercontent.com/114442750/221625990-15879a67-9e4f-46ee-b2df-a3f7a4459cf8.png)
+
+<p><b>Список услуг</b></p>
+
+![image](https://user-images.githubusercontent.com/114442750/221626173-9dc6c3b1-984c-4747-9d1a-4a06ae3357e9.png)
+
+<p><b>Добавление услуги</b></p>
+
+![image](https://user-images.githubusercontent.com/114442750/221626311-23479a97-1b98-4898-9fb7-6b0f4ba6761d.png)
+
+<p><b>Редактирование услуги</b></p>
+
+![image](https://user-images.githubusercontent.com/114442750/221626445-6542b705-e543-4c98-81df-a52270f04441.png)
