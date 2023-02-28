@@ -32,6 +32,8 @@ namespace FitnessClub19KT.Windows
         public AddEditService()
         {
             InitializeComponent();
+            IsEdit = false;
+
         }
 
         public AddEditService(Service service)
@@ -58,13 +60,24 @@ namespace FitnessClub19KT.Windows
                     bitmapImage.StreamSource = stream;
                     bitmapImage.EndInit();
 
-
+                    if(service.Photo != null)
+                    {
                     ImgService.Source = bitmapImage;
+                    }
                 }
             }
 
             IsEdit = true;
             editService = service;
+        }
+        private void BtnChooseImage_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == true)
+            {
+                ImgService.Source = new BitmapImage(new Uri(openFileDialog.FileName));
+                pathImage = openFileDialog.FileName;
+            }
         }
         private void BtnAddEdit_Click(object sender, RoutedEventArgs e)
         {
@@ -92,7 +105,7 @@ namespace FitnessClub19KT.Windows
                 editService.Description = TbDescripService.Text;
                 if (pathImage != null)
                 {
-                    //editService.Photo = Convert.ToString(File.ReadAllBytes(pathImage));
+                    editService.Photo = pathImage;
                 }
                 EFClass.context.SaveChanges();
                 MessageBox.Show("Услуга успешно изменена", "Изменение", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -118,15 +131,6 @@ namespace FitnessClub19KT.Windows
             }
         }
 
-        private void BtnChooseImage_Click(object sender, RoutedEventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == true)
-            {
-                ImgService.Source = new BitmapImage(new Uri(openFileDialog.FileName));
-                pathImage = openFileDialog.FileName;
-            }
-        }
 
         private void ToolBar_MouseDown(object sender, MouseButtonEventArgs e)
         {
