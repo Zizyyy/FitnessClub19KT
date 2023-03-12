@@ -25,11 +25,25 @@ namespace FitnessClub19KT.Pages.ComponentsService
     /// </summary>
     public partial class ListServicePage : Page
     {
+        List<string> listSort = new List<string>()
+        {
+            "По умолчанию",
+            "От А до Я",
+            "От Я до А",
+            "По цене (По убыванию)",
+            "По цене (По возрастанию)",
+            "По длительности (По убыванию)",
+            "По длительности (По возрастания)"
+        };
+
 
         public ListServicePage()
         {
             InitializeComponent();
             GetServiceList();
+
+            CmbSort.ItemsSource = listSort;
+            CmbSort.SelectedIndex = 0;
         }
 
         private void GetServiceList()
@@ -38,6 +52,35 @@ namespace FitnessClub19KT.Pages.ComponentsService
 
             serviceList = ClassHelper.EFClass.context.Service.ToList();
 
+            //Search
+            serviceList = serviceList.Where(x => x.Title.ToLower().Contains(TbSearch.Text.ToLower())).ToList();
+
+            //Sort
+            switch (CmbSort.SelectedIndex)
+            {
+                case 0:
+                    serviceList = serviceList.OrderBy(x => x.IdService).ToList();
+                    break;
+                case 1:
+                    serviceList = serviceList.OrderBy(x => x.Title).ToList();
+                    break;
+                case 2:
+                    serviceList = serviceList.OrderByDescending(x => x.Title).ToList();
+                    break;
+                case 3:
+                    serviceList = serviceList.OrderBy(x => x.Cost).ToList();
+                    break;
+                case 4:
+                    serviceList = serviceList.OrderByDescending(x => x.Cost).ToList();
+                    break;
+                case 5:
+                    serviceList = serviceList.OrderBy(x => x.DurationInMinute).ToList();
+                    break;
+                case 6:
+                    serviceList = serviceList.OrderByDescending(x => x.DurationInMinute).ToList();
+                    break;
+            }
+         
             LvService.ItemsSource = serviceList;
         }
 
@@ -52,6 +95,16 @@ namespace FitnessClub19KT.Pages.ComponentsService
 
             AddEditService addEditService = new AddEditService(service);
             addEditService.Show();
+            GetServiceList();
+        }
+
+        private void TbSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            GetServiceList();
+        }
+
+        private void CmbSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
             GetServiceList();
         }
     }

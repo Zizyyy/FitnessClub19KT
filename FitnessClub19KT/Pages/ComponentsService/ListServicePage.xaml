@@ -12,6 +12,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
         
@@ -52,19 +53,19 @@
                                             <ImageSource>
                                                 /Assets/NoImageService.png
                                             </ImageSource>
-                                        </Binding.TargetNullValue>
+                                        </Binding.TargetNullValue>  
                                     </Binding>
                                 </Image.Source>
                             </Image>
 
-                                <Border BorderBrush="Black"
+                            <Border BorderBrush="Black"
                                         BorderThickness="0.4"
                                         CornerRadius="5"
                                         Margin="5 5 5 0">
-                                    <TextBlock Text="{Binding Title}"
+                                <TextBlock Text="{Binding Title}"
                                                Style="{DynamicResource TblStyle}"/>
-                                </Border>
-                                <Border BorderBrush="Black"
+                            </Border>
+                            <Border BorderBrush="Black"
                                         BorderThickness="0.4"
                                         CornerRadius="5"
                                         Margin="5 5 5 0">
@@ -100,5 +101,29 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
+        <StackPanel Grid.Row="2"
+                    Orientation="Horizontal"
+                    Margin="15 0 0 0">
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Поиск"
+                           Style="{DynamicResource TblStyle}"/>
+                <TextBox x:Name="TbSearch"
+                         Style="{DynamicResource TbStyle}"
+                         Height="25"
+                         Width="300"
+                         FontSize="22"
+                         Padding="2 1 0 0 " TextChanged="TbSearch_TextChanged"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical"
+                        Margin="5 0 0 0">
+                <TextBlock Text="Сортировка"
+                           Style="{DynamicResource TblStyle}"/>
+                <ComboBox x:Name="CmbSort"
+                          Style="{DynamicResource ComboBoxStyle}"
+                          Width="300" SelectionChanged="CmbSort_SelectionChanged"/>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Page>
