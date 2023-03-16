@@ -73,6 +73,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ListClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\RegistrationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -94,6 +98,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resources\TextBlockStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\AddEditClient.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -171,8 +179,14 @@
     <Compile Include="Pages\ComponentsService\ListServicePage.xaml.cs">
       <DependentUpon>ListServicePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ListClient.xaml.cs">
+      <DependentUpon>ListClient.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\RegistrationPage.xaml.cs">
       <DependentUpon>RegistrationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\AddEditClient.xaml.cs">
+      <DependentUpon>AddEditClient.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\AddEditService.xaml.cs">
       <DependentUpon>AddEditService.xaml</DependentUpon>

@@ -124,6 +124,14 @@
                           Style="{DynamicResource ComboBoxStyle}"
                           Width="300" SelectionChanged="CmbSort_SelectionChanged"/>
             </StackPanel>
+
+            <StackPanel Margin="350 0 0 0">
+                <Button x:Name="BtnAddService"
+                        Style="{DynamicResource BtnStyle}"
+                        Content="ДОБАВИТЬ"
+                        Width="200"
+                        Height="45" Click="BtnAddService_Click"/>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Page>

@@ -107,5 +107,11 @@ namespace FitnessClub19KT.Pages.ComponentsService
         {
             GetServiceList();
         }
+
+        private void BtnAddService_Click(object sender, RoutedEventArgs e)
+        {
+            AddEditService addEditService = new AddEditService();
+            addEditService.Show();
+        }
     }
 }

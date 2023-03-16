@@ -29,7 +29,7 @@ namespace FitnessClub19KT
         public MainWindow()
         {
             InitializeComponent();
-            FrListService.Content = new ListServicePage();
+            FrList.Content = new ListServicePage();
         }
         //
         private void ToolBar_MouseDown(object sender, MouseButtonEventArgs e)
@@ -61,7 +61,12 @@ namespace FitnessClub19KT
 
         private void BtnServiceList_Click(object sender, RoutedEventArgs e)
         {
-            FrListService.Content = new ListServicePage();
+            FrList.Content = new ListServicePage();
+        }
+
+        private void BtnClientList_Click(object sender, RoutedEventArgs e)
+        {
+            FrList.Content = new ListClient();
         }
     }
 }
