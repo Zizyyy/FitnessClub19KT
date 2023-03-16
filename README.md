@@ -5,6 +5,8 @@
 
 ![image](https://user-images.githubusercontent.com/114442750/218548667-8b80624d-3d41-4f21-b167-faba13b2354d.png)
 
+[db.zip](https://github.com/Zizyyy/FitnessClub19KT/files/10995769/db.zip)
+
 <h2>Структура проекта</h2>
 
 ![image](https://user-images.githubusercontent.com/114442750/218549009-957c028c-d1b0-4a1b-9979-8084b03aa79f.png)
