@@ -23,7 +23,7 @@
                 <TextBlock HorizontalAlignment="Left"
                            x:Name="TblLog"
                            Style="{DynamicResource TblStyle}"
-                           Margin="15 0 0 0"
+                           Margin="20 0 0 0"
                            FontSize="16"/>
 
                 <StackPanel Grid.Row="0" HorizontalAlignment="Right"
