@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,5 +14,5 @@ namespace FitnessClub19KT.ClassHelper
     internal class CartClass
     {
         public static ObservableCollection<Service> serviceCart = new ObservableCollection<Service>();
-    }
+    } 
 }

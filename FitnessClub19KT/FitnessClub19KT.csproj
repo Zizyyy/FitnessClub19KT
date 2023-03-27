@@ -131,6 +131,7 @@
     </Compile>
     <Compile Include="ClassHelper\CartClass.cs" />
     <Compile Include="ClassHelper\EFClass.cs" />
+    <Compile Include="ClassHelper\UserClass.cs" />
     <Compile Include="DB\Admin.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -256,6 +257,7 @@
     <Resource Include="Assets\NoImageService.png" />
     <Resource Include="Assets\Cart.png" />
     <Resource Include="Assets\Editing.png" />
+    <Resource Include="Assets\Trash.png" />
     <Content Include="DB\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>

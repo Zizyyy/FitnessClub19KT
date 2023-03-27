@@ -36,6 +36,8 @@ namespace FitnessClub19KT.Pages
                 
             if (authuser != null)
             {
+                UserClass.AuthUser = authuser;
+
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
             }

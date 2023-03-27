@@ -20,6 +20,12 @@
             </Grid.RowDefinitions>
         
             <Grid x:Name="ToolBar" Background="Transparent" MouseDown="ToolBar_MouseDown">
+                <TextBlock HorizontalAlignment="Left"
+                           x:Name="TblLog"
+                           Style="{DynamicResource TblStyle}"
+                           Margin="15 0 0 0"
+                           FontSize="16"/>
+
                 <StackPanel Grid.Row="0" HorizontalAlignment="Right"
                             Orientation="Horizontal">
                     <Image x:Name="ButtonMinimize" Source="/Assets/Minimize.png"
