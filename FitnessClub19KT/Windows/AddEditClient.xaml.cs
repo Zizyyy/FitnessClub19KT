@@ -66,9 +66,9 @@ namespace FitnessClub19KT.Windows
                 editClient.Email = editClient.Email;
                 EFClass.context.SaveChanges();
                 MessageBox.Show("Услуга успешно изменена", "Изменение", MessageBoxButton.OK, MessageBoxImage.Information);
-                this.Close();
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
+                this.Close();
             } 
             else
             {
@@ -79,11 +79,8 @@ namespace FitnessClub19KT.Windows
                 client.Email = TbEmail.Text;
                 client.Phone = TbPhone.Text;
                 client.BirthdayDate = DpBirthday.SelectedDate.Value;
-                //client.IdGender = (CmbGender.SelectedItem as Gender).IdGender;
-                if(client.IdGender == CmbGender.SelectedIndex)
-                {
-                    client.IdGender = CmbGender.SelectedIndex;
-                }
+                client.IdGender = (CmbGender.SelectedItem as Gender).IdGender;
+                
                 EFClass.context.Client.Add(client);
 
                 EFClass.context.SaveChanges();

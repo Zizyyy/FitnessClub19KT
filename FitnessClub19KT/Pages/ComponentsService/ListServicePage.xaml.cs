@@ -113,5 +113,19 @@ namespace FitnessClub19KT.Pages.ComponentsService
             AddEditService addEditService = new AddEditService();
             addEditService.Show();
         }
+
+        private void BtnAddToCart_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            if(button == null )
+            {
+                return;
+            }
+
+            var service = button.DataContext as Service;
+
+            CartClass.serviceCart.Add(service);
+            MessageBox.Show($"Услуга {service.Title.ToString()} успешно добавлена в корзину", "Добавление", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
     }
 }

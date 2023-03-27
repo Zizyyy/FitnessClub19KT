@@ -30,7 +30,6 @@ namespace FitnessClub19KT.Pages
             InitializeComponent();
             GetClientList();
         }
-
         private void GetClientList()
         {
             List<Client> clientList = new List<Client>();

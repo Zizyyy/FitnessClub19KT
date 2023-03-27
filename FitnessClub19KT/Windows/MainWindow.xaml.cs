@@ -68,5 +68,10 @@ namespace FitnessClub19KT
         {
             FrList.Content = new ListClient();
         }
+
+        private void BtnGoToCart_Click(object sender, RoutedEventArgs e)
+        {
+            FrList.Content = new CartPage();
+        }
     }
 }
