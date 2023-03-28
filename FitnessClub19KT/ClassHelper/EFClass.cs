@@ -12,6 +12,6 @@ namespace FitnessClub19KT.ClassHelper
 {
     public class EFClass
     {
-        public static FitnessClubEntities context { get; set; } = new FitnessClubEntities();
+        public static Entities context { get; set; } = new Entities();
     }
 }

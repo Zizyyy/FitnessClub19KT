@@ -14,13 +14,11 @@ namespace FitnessClub19KT.DB
     
     public partial class Authorization
     {
-        public int IdAuth { get; set; }
+        public int IdAuthorization { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
-        public int IdPerson { get; set; }
         public int IdRole { get; set; }
     
-        public virtual Person Person { get; set; }
         public virtual Role Role { get; set; }
     }
 }

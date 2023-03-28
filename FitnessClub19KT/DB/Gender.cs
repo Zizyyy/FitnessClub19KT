@@ -18,15 +18,12 @@ namespace FitnessClub19KT.DB
         public Gender()
         {
             this.Client = new HashSet<Client>();
-            this.Person = new HashSet<Person>();
         }
     
         public int IdGender { get; set; }
-        public string Title { get; set; }
+        public string GenderName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Client> Client { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Person> Person { get; set; }
     }
 }

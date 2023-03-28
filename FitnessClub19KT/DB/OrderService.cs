@@ -12,10 +12,14 @@ namespace FitnessClub19KT.DB
     using System;
     using System.Collections.Generic;
     
-    public partial class Invertory
+    public partial class OrderService
     {
-        public int IdInverory { get; set; }
-        public string Title { get; set; }
+        public int IdOrderService { get; set; }
+        public int idOrder { get; set; }
+        public int idService { get; set; }
         public int Count { get; set; }
+    
+        public virtual Order Order { get; set; }
+        public virtual Service Service { get; set; }
     }
 }

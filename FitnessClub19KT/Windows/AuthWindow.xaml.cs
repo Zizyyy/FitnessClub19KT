@@ -25,8 +25,8 @@ namespace FitnessClub19KT.Windows
         public AuthWindow()
         {
             InitializeComponent();
-
             FrAuthReg.Content = new AuthorizationPage();
+            MainWindow.OnAuth += () => this.Close();
         }
 
         

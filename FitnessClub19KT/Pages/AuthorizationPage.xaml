@@ -11,10 +11,12 @@
     <Grid>
         <StackPanel HorizontalAlignment="Center" Margin="0 70 0 0">
             <TextBlock Text="Логин" 
+                             
                             Foreground="#696969" 
                             FontFamily="Bahnschrift SemiBold SemiCondensed"
                             FontSize="22"/>
             <TextBox Style="{DynamicResource TbStyle}" x:Name="TbLogin" Width="250" 
+                            Padding="1" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"
                             Height="30" MaxLength="20"
                             FontSize="22"/>
             <TextBlock Text="Пароль"
@@ -22,10 +24,10 @@
                             FontFamily="Bahnschrift SemiBold SemiCondensed"
                             FontSize="22" />
             <PasswordBox Style="{DynamicResource PasswordBoxStyle}" x:Name="PbPassword"
-                            Foreground="#696969" Width="250" 
+                            Padding="1" PasswordChar="*" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"
+                            Foreground="Black" Width="250" 
                             Height="30" MaxLength="20"
-                            FontSize="20" 
-                            Padding="-3"/>
+                            FontSize="20"/>
             <Button Style="{DynamicResource BtnStyle}" x:Name="btnSignIn" Content="ВОЙТИ"
                      Height="60" Width="200"
                      FontFamily="Bahnschrift SemiBold SemiCondensed"

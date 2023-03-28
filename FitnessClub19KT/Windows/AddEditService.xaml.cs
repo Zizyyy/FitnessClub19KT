@@ -47,23 +47,30 @@ namespace FitnessClub19KT.Windows
             TbTitleService.Text = service.Title.ToString();
             TbCostService.Text = service.Cost.ToString();
             TbDescripService.Text = service.Description.ToString();
-            TbDurationService.Text = service.DurationInMinute.ToString();
+            TbDurationService.Text = service.DurationInMin.ToString();
 
-            if (service.Photo != null)
+            if (service.PhotoPath != null)
             {
-                using (MemoryStream stream = new MemoryStream(Convert.ToByte(service.Photo)))
+                try
                 {
-                    BitmapImage bitmapImage = new BitmapImage();
-                    bitmapImage.BeginInit();
-                    bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
-                    bitmapImage.CreateOptions = BitmapCreateOptions.PreservePixelFormat;
-                    bitmapImage.StreamSource = stream;
-                    bitmapImage.EndInit();
-
-                    if(service.Photo != null)
+                    using (MemoryStream stream = new MemoryStream(Convert.ToByte(service.PhotoPath)))
                     {
-                    ImgService.Source = bitmapImage;
+                        BitmapImage bitmapImage = new BitmapImage();
+                        bitmapImage.BeginInit();
+                        bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
+                        bitmapImage.CreateOptions = BitmapCreateOptions.PreservePixelFormat;
+                        bitmapImage.StreamSource = stream;
+                        bitmapImage.EndInit();
+
+                        if (service.PhotoPath != null)
+                        {
+                            ImgService.Source = bitmapImage;
+                        }
                     }
+                }
+                catch(Exception e)
+                {
+                    ImgService.Source = null;
                 }
             }
 
@@ -101,33 +108,35 @@ namespace FitnessClub19KT.Windows
             {
                 editService.Title = TbTitleService.Text;
                 editService.Cost = Convert.ToDecimal(TbCostService.Text);
-                editService.DurationInMinute = Convert.ToInt32(TbDurationService.Text);
+                editService.DurationInMin = Convert.ToInt32(TbDurationService.Text);
                 editService.Description = TbDescripService.Text;
                 if (pathImage != null)
                 {
-                    editService.Photo = pathImage;
+                    editService.PhotoPath = pathImage;
                 }
                 EFClass.context.SaveChanges();
                 MessageBox.Show("Услуга успешно изменена", "Изменение", MessageBoxButton.OK, MessageBoxImage.Information);
-                this.Close();
+                
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
+                this.Close();
             }
             else
             {
                 Service service = new Service();
                 service.Title = TbTitleService.Text;
                 service.Cost = Convert.ToDecimal(TbCostService.Text);
-                service.DurationInMinute = Convert.ToInt32(TbDurationService.Text);
+                service.DurationInMin = Convert.ToInt32(TbDurationService.Text);
                 service.Description = TbDescripService.Text;
-                //service.Photo = Convert.ToString(File.ReadAllBytes(pathImage));
+                service.PhotoPath = pathImage;
 
                 EFClass.context.Service.Add(service);
                 EFClass.context.SaveChanges();
                 MessageBox.Show("Услуга успешно добавлена","Добавление",MessageBoxButton.OK, MessageBoxImage.Information);
-                this.Close();
+                
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
+                this.Close();
             }
         }
 
@@ -152,9 +161,9 @@ namespace FitnessClub19KT.Windows
 
         private void TblBack_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            this.Close();
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
+            this.Close();
         }
     }
 }

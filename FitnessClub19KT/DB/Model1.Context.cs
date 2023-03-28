@@ -15,10 +15,10 @@ namespace FitnessClub19KT.DB
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class FitnessClubEntities : DbContext
+    public partial class Entities : DbContext
     {
-        public FitnessClubEntities()
-            : base("name=FitnessClubEntities")
+        public Entities()
+            : base("name=Entities")
         {
         }
     
@@ -27,15 +27,15 @@ namespace FitnessClub19KT.DB
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Admin> Admin { get; set; }
         public virtual DbSet<Authorization> Authorization { get; set; }
         public virtual DbSet<Client> Client { get; set; }
-        public virtual DbSet<ClientService> ClientService { get; set; }
+        public virtual DbSet<Employeer> Employeer { get; set; }
         public virtual DbSet<Gender> Gender { get; set; }
-        public virtual DbSet<Invertory> Invertory { get; set; }
-        public virtual DbSet<Person> Person { get; set; }
+        public virtual DbSet<Order> Order { get; set; }
+        public virtual DbSet<OrderService> OrderService { get; set; }
         public virtual DbSet<Role> Role { get; set; }
         public virtual DbSet<Service> Service { get; set; }
+        public virtual DbSet<SpecialistCategory> SpecialistCategory { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)

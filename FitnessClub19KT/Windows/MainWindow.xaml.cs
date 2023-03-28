@@ -1,23 +1,9 @@
-﻿using FitnessClub19KT.Pages.ComponentsService;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
+﻿using FitnessClub19KT.DB;
 using FitnessClub19KT.Pages;
-using FitnessClub19KT.ClassHelper;
-using FitnessClub19KT.DB;
+using FitnessClub19KT.Pages.ComponentsService;
 using FitnessClub19KT.Windows;
+using System.Windows;
+using System.Windows.Input;
 
 namespace FitnessClub19KT
 {
@@ -26,12 +12,22 @@ namespace FitnessClub19KT
     /// </summary>
     public partial class MainWindow : Window
     {
+        public delegate void IsAuth();
+        public static event IsAuth OnAuth;
+        public static Authorization User;
         public MainWindow()
         {
             InitializeComponent();
             FrListService.Content = new ListServicePage();
+            TblLogin.Text = User.Role.Title;
+            OnAuth.Invoke();
         }
-        //
+        public static MainWindow Auth(Authorization User)
+        {
+            MainWindow.User = User;
+            return new MainWindow();
+        }
+
         private void ToolBar_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if(e.ChangedButton == MouseButton.Left )
@@ -53,15 +49,21 @@ namespace FitnessClub19KT
         private void BtnAddEdit_Click(object sender, RoutedEventArgs e)
         {
             //FrListService.Content = new AddEditServicePage();
-            this.Close();
+            
 
             AddEditService addEditService = new AddEditService();
             addEditService.Show();
+            this.Close();
         }
 
         private void BtnServiceList_Click(object sender, RoutedEventArgs e)
         {
             FrListService.Content = new ListServicePage();
+        }
+
+        private void BtnCartList_Click(object sender, RoutedEventArgs e)
+        {
+            FrListService.Content = new CartPage();
         }
     }
 }

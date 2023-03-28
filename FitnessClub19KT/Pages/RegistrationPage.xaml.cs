@@ -67,7 +67,7 @@ namespace FitnessClub19KT.Pages
             client.FirstName = TbFirstName.Text;
             client.LastName = TbLastName.Text;
             client.Patronymic = TbPatronymic.Text;
-            client.BirthdayDate = DpBirthday.SelectedDate.Value; 
+            client.Birthday = DpBirthday.SelectedDate.Value; 
             client.Phone= TbPhone.Text;
             client.IdGender = (CmbGender.SelectedItem as Gender).IdGender;
 

@@ -12,15 +12,14 @@ namespace FitnessClub19KT.DB
     using System;
     using System.Collections.Generic;
     
-    public partial class ClientService
+    public partial class Employeer
     {
-        public int IdClientService { get; set; }
-        public int IdClient { get; set; }
-        public int IdService { get; set; }
-        public System.DateTime StartTime { get; set; }
-        public System.DateTime EndTime { get; set; }
+        public int IdEmployeer { get; set; }
+        public string FirstName { get; set; }
+        public string MiddleName { get; set; }
+        public string LastName { get; set; }
+        public int idSpecialistCategory { get; set; }
     
-        public virtual Person Person { get; set; }
-        public virtual Service Service { get; set; }
+        public virtual SpecialistCategory SpecialistCategory { get; set; }
     }
 }
