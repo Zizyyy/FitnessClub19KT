@@ -74,10 +74,10 @@ namespace FitnessClub19KT.Pages.ComponentsService
                     serviceList = serviceList.OrderByDescending(x => x.Cost).ToList();
                     break;
                 case 5:
-                    serviceList = serviceList.OrderBy(x => x.DurationInMinute).ToList();
+                    serviceList = serviceList.OrderBy(x => x.DurationInMin).ToList();
                     break;
                 case 6:
-                    serviceList = serviceList.OrderByDescending(x => x.DurationInMinute).ToList();
+                    serviceList = serviceList.OrderByDescending(x => x.DurationInMin).ToList();
                     break;
             }
          
@@ -124,7 +124,7 @@ namespace FitnessClub19KT.Pages.ComponentsService
 
             var service = button.DataContext as Service;
 
-            CartClass.serviceCart.Add(service);
+            CartClass.serviceCart.Add(new ServiceCart(service));
             MessageBox.Show($"Услуга {service.Title.ToString()} успешно добавлена в корзину", "Добавление", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }

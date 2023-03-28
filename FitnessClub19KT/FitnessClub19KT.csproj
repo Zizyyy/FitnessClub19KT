@@ -123,9 +123,6 @@
     </Compile>
     <Compile Include="ClassHelper\CartClass.cs" />
     <Compile Include="ClassHelper\EFClass.cs" />
-    <Compile Include="DB\Admin.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="DB\Authorization.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -166,12 +163,6 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\SpecialistCategory.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DB\sp_helpdiagrams_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DB\sysdiagrams.cs">
@@ -242,6 +233,11 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\NoImageService.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="DB\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

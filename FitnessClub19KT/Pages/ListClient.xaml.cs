@@ -43,8 +43,8 @@ namespace FitnessClub19KT.Pages
 
         private void BtnAddClient_Click(object sender, RoutedEventArgs e)
         {
-            AddEditClient addEditClient = new AddEditClient();
-            addEditClient.Show();
+            //AddEditClient addEditClient = new AddEditClient();
+            //addEditClient.Show();
         }
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
@@ -57,8 +57,8 @@ namespace FitnessClub19KT.Pages
 
             var client = button.DataContext as Client;
 
-            AddEditClient addEditClient = new AddEditClient();
-            addEditClient.Show();
+            //AddEditClient addEditClient = new AddEditClient();
+            //addEditClient.Show();
             GetClientList();
         }
     }
