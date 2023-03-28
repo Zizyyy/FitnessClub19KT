@@ -25,23 +25,24 @@ namespace FitnessClub19KT.Pages.ComponentsService
     /// </summary>
     public partial class ListServicePage : Page
     {
-        List<string> sortList = new List<string>()
+        List<string> listSort = new List<string>()
         {
             "По умолчанию",
-            "По названию (от А до Я)",
-            "По названию (от Я до А)",
-            "По цене (по убыванию)",
-            "По цене (по возрастанию)",
-            "По длительности (по убыванию)",
-            "По длительности (по возрастанию)"
+            "От А до Я",
+            "От Я до А",
+            "По цене (По убыванию)",
+            "По цене (По возрастанию)",
+            "По длительности (По убыванию)",
+            "По длительности (По возрастания)"
         };
+
 
         public ListServicePage()
         {
             InitializeComponent();
             GetServiceList();
 
-            CmbSort.ItemsSource = sortList; 
+            CmbSort.ItemsSource = listSort;
             CmbSort.SelectedIndex = 0;
         }
 
@@ -51,39 +52,35 @@ namespace FitnessClub19KT.Pages.ComponentsService
 
             serviceList = ClassHelper.EFClass.context.Service.ToList();
 
-            //Sorting
+            //Search
+            serviceList = serviceList.Where(x => x.Title.ToLower().Contains(TbSearch.Text.ToLower())).ToList();
 
+            //Sort
             switch (CmbSort.SelectedIndex)
             {
                 case 0:
-                    serviceList = serviceList.OrderBy(i => i.IdService).ToList();
+                    serviceList = serviceList.OrderBy(x => x.IdService).ToList();
                     break;
                 case 1:
-                    serviceList = serviceList.OrderBy(i => i.Title).ToList();
+                    serviceList = serviceList.OrderBy(x => x.Title).ToList();
                     break;
                 case 2:
-                    serviceList = serviceList.OrderByDescending(i => i.Title).ToList();
+                    serviceList = serviceList.OrderByDescending(x => x.Title).ToList();
                     break;
                 case 3:
-                    serviceList = serviceList.OrderBy(i => i.Cost).ToList();
+                    serviceList = serviceList.OrderBy(x => x.Cost).ToList();
                     break;
                 case 4:
-                    serviceList = serviceList.OrderByDescending(i => i.Cost).ToList();
+                    serviceList = serviceList.OrderByDescending(x => x.Cost).ToList();
                     break;
                 case 5:
-                    serviceList = serviceList.OrderBy(i => i.DurationInMin).ToList();
+                    serviceList = serviceList.OrderBy(x => x.DurationInMinute).ToList();
                     break;
                 case 6:
-                    serviceList = serviceList.OrderByDescending(i => i.DurationInMin).ToList();
-                    break;
-                default:
-                    serviceList = serviceList.OrderBy(i => i.IdService).ToList();
+                    serviceList = serviceList.OrderByDescending(x => x.DurationInMinute).ToList();
                     break;
             }
-
-            //Search
-            serviceList = serviceList.Where(i => i.Title.ToLower().ToUpper().Contains(TbSearch.Text.ToLower())).ToList();
-
+         
             LvService.ItemsSource = serviceList;
         }
 
@@ -101,18 +98,6 @@ namespace FitnessClub19KT.Pages.ComponentsService
             GetServiceList();
         }
 
-        private void BtnAddToCart(object sender, RoutedEventArgs e)
-        {
-            var button = sender as Button;
-            if (button == null)
-            {
-                return;
-            }
-            var service = button.DataContext as Service;
-
-
-        }
-
         private void TbSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
             GetServiceList();
@@ -123,25 +108,24 @@ namespace FitnessClub19KT.Pages.ComponentsService
             GetServiceList();
         }
 
+        private void BtnAddService_Click(object sender, RoutedEventArgs e)
+        {
+            AddEditService addEditService = new AddEditService();
+            addEditService.Show();
+        }
+
         private void BtnAddToCart_Click(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
-            if (button == null)
+            if(button == null )
             {
                 return;
             }
+
             var service = button.DataContext as Service;
-            ServiceCart serviceCart = new ServiceCart()
-            {
-                IdService = service.IdService,
-                Description = service.Description,
-                OrderService = service.OrderService,
-            };
-            if (CartClass.serviceCart.Contains(serviceCart)) {
-                serviceCart = CartClass.serviceCart.First(x=>x.IdService == service.IdService);
-                serviceCart.Count++;
-            }
-            CartClass.serviceCart.Add(serviceCart);
+
+            CartClass.serviceCart.Add(service);
+            MessageBox.Show($"Услуга {service.Title.ToString()} успешно добавлена в корзину", "Добавление", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }

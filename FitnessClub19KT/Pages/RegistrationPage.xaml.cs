@@ -41,7 +41,7 @@ namespace FitnessClub19KT.Pages
                 MessageBox.Show("Поле \"Фамилия\" не может быть пустым.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            if(string.IsNullOrWhiteSpace(TbLastName.Text))
+            if (string.IsNullOrWhiteSpace(TbLastName.Text))
             {
                 MessageBox.Show("Поле \"Имя\" не может быть пустым.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;

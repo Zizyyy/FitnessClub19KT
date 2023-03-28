@@ -2,6 +2,8 @@
 using FitnessClub19KT.DB;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,20 +29,7 @@ namespace FitnessClub19KT.Pages
             InitializeComponent();
             Service service = new Service();
 
-            LvCartService.ItemsSource = CartClass.serviceCart.ToList();
-
-        }
-        
-
-        private void BtnRemove_Click(object sender, RoutedEventArgs e)
-        {
-            var button = sender as Button;
-            if (button == null)
-            {
-                return;
-            }
-            var service = button.DataContext as DB.Service;
-            CartClass.serviceCart.Remove((ServiceCart)service);
+            LvService.ItemsSource = CartClass.serviceCart.ToList();
         }
     }
 }
