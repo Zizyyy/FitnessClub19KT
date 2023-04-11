@@ -33,4 +33,10 @@
 
 <p><b>Сортировка и Поиск</b></p>
 
-![image](https://user-images.githubusercontent.com/114442750/224550666-fabf2b41-c782-42d2-88cd-9177a851c5ba.png)
+![image](https://user-images.githubusercontent.com/114442750/229594746-52ead71f-096c-4d56-950a-4fdabe464c38.png)
+
+<p><b>Корзина</b></p>
+
+![image](https://user-images.githubusercontent.com/114442750/229594862-84e74af3-0377-4404-a2a9-c6b6ea32a59b.png)
+
+
