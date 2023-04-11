@@ -53,7 +53,7 @@
                                             <ImageSource>
                                                 /Assets/NoImageService.png
                                             </ImageSource>
-                                        </Binding.TargetNullValue>  
+                                        </Binding.TargetNullValue>
                                     </Binding>
                                 </Image.Source>
                             </Image>
@@ -88,6 +88,7 @@
                                 <TextBlock Text="{Binding Description}"
                                            Style="{DynamicResource TblStyle}"/>
                             </Border>
+                            
                             <StackPanel Orientation="Horizontal">
                                 <Button x:Name="BtnEdit"
                                         Style="{DynamicResource ImgBtnStyle}"
@@ -107,7 +108,9 @@
                                         Click="BtnAddToCart_Click">
                                     <Image Source="/Assets/Cart.png"/>
                                 </Button>
-                             </StackPanel>
+
+                                
+                            </StackPanel>
                         </StackPanel>
                     </Border>
                 </DataTemplate>

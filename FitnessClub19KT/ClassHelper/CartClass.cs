@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 using FitnessClub19KT.DB;
@@ -12,15 +13,24 @@ namespace FitnessClub19KT.ClassHelper
     internal class CartClass
     {
         public static ObservableCollection<ServiceCart> serviceCart = new ObservableCollection<ServiceCart>();
-        static CartClass()
+        public class Cart
         {
-            
+            public int Id { get; set; }
+            public virtual ICollection<ServiceCart> CartItems { get; set; }
         }
-        public static void AddToList(ServiceCart sc)
+
+        public class CartItem
         {
-            if (serviceCart.Contains(sc))
+            public int CartId { get; set; }
+            public Cart Cart { get; set; }
+        }
+
+            public static void AddToList(ServiceCart sc)
+        {
+            var target = serviceCart.FirstOrDefault(x => x.IdService == sc.IdService);
+            if (target!=null)
             {
-                serviceCart.FirstOrDefault(x => x == sc).Count++;
+                target.Count++;
                 return;
             }
             serviceCart.Add(sc);

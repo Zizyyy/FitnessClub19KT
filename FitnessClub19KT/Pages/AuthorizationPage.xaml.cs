@@ -34,12 +34,19 @@ namespace FitnessClub19KT.Pages
             var authuser = EFClass.context.Authorization.ToList()
                 .Where(x => x.Login == TbLogin.Text && x.Password == PbPassword.Password)
                 .FirstOrDefault();
-                
-            if (authuser != null)
+
+            if (authuser.IdRole == 1)
             {
-                MainWindow mainWindow = MainWindow.Auth(authuser);
-                mainWindow.Show();
-                
+               MainWindow.Auth(authuser).Show();
+            }
+            else if (authuser.IdRole ==2 )
+            {
+                ManagementWindow.Auth(authuser).Show();
+            } 
+            else if (authuser.IdRole == 3)
+            {
+
+                MainCoachWindow.Auth(authuser).Show();
             }
             else
             {

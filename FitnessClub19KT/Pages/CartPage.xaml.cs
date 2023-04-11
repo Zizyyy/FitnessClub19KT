@@ -27,9 +27,23 @@ namespace FitnessClub19KT.Pages
         public CartPage()
         {
             InitializeComponent();
-            Service service = new Service();
+            GetList();
 
+            List<Service> service = new List<Service>();
+        }
+
+        public void GetList()
+        {
             LvService.ItemsSource = CartClass.serviceCart.ToList();
+        }
+
+        private void BtnRemove_Click(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            if (button == null)
+            {
+                return;
+            }
         }
     }
 }

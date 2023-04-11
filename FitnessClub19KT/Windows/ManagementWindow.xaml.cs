@@ -12,36 +12,31 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-using FitnessClub19KT.Pages;
 using FitnessClub19KT.ClassHelper;
-using System.Globalization;
-using System.Threading;
+using FitnessClub19KT.DB;
 
 namespace FitnessClub19KT.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для AuthWindow.xaml
+    /// Логика взаимодействия для ManagementWindow.xaml
     /// </summary>
-    public partial class AuthWindow : Window
+    public partial class ManagementWindow : Window
     {
-        public AuthWindow()
+        public delegate void IsAuth();
+        public static event IsAuth OnAuth;
+        public static Authorization User;
+        public static ManagementWindow Auth(Authorization User)
+        {
+            ManagementWindow.User = User;
+            return new ManagementWindow();
+        }
+        public ManagementWindow()
         {
             InitializeComponent();
-            FrAuthReg.Content = new AuthorizationPage();
-            MainWindow.OnAuth += () => this.Close();
-            MainCoachWindow.OnAuth += () => this.Close();
-            ManagementWindow.OnAuth += () => this.Close();
+            TblLogin.Text = User.Role.Title;
+            OnAuth.Invoke();
         }
 
-        
-        private void TblLog_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            FrAuthReg.Content = new AuthorizationPage();
-        }
-        private void TblReg_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            FrAuthReg.Content = new RegistrationPage();
-        }
         private void ToolBar_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)

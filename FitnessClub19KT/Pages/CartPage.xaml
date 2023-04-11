@@ -88,16 +88,26 @@
                                 <TextBlock Text="{Binding Description}"
                                            Style="{DynamicResource TblStyle}"/>
                             </Border>
+                            <Border  BorderBrush="Black"
+                                     BorderThickness="0.4"
+                                     CornerRadius="5"
+                                     Margin="5 5 5 0">
+                                <TextBlock Text="{Binding Count}"
+                                           Style="{DynamicResource TblStyle}"/>
+                            </Border>
                             <StackPanel Orientation="Horizontal"
                                         HorizontalAlignment="Right">
-                                <Button x:Name="BtnDelete"
+                                <Button x:Name="BtnRemove"
                                         Style="{DynamicResource ImgBtnStyle}"
                                         Height="20"
                                         Width="20"
-                                        Margin="0 5 2 0 ">
+                                        Margin="0 5 2 0 "
+                                        Click="BtnRemove_Click">
                                     <Image Source="/Assets/Trash.png"/>
                                 </Button>
                             </StackPanel>
+
+                            
                         </StackPanel>
                     </Border>
                 </DataTemplate>

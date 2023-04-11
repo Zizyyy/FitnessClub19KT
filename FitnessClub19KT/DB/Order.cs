@@ -11,7 +11,8 @@ namespace FitnessClub19KT.DB
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Globalization;
+
     public partial class Order
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,11 +20,12 @@ namespace FitnessClub19KT.DB
         {
             this.OrderService = new HashSet<OrderService>();
         }
-    
+        private CultureInfo culture = CultureInfo.InvariantCulture;
         public int IdOrder { get; set; }
         public int IdClient { get; set; }
-        public System.DateTime StartDate { get; set; }
-        public System.DateTime EndTime { get; set; }
+        private System.DateTime StartDate { get; set; }
+        private System.DateTime EndTime { get; set; }
+
         public decimal Discount { get; set; }
     
         public virtual Client Client { get; set; }

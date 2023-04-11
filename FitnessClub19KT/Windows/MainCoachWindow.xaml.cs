@@ -12,36 +12,40 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-using FitnessClub19KT.Pages;
 using FitnessClub19KT.ClassHelper;
-using System.Globalization;
-using System.Threading;
+using FitnessClub19KT.DB;
 
 namespace FitnessClub19KT.Windows
 {
     /// <summary>
-    /// Логика взаимодействия для AuthWindow.xaml
+    /// Логика взаимодействия для MainCoachWindow.xaml
     /// </summary>
-    public partial class AuthWindow : Window
+    public partial class MainCoachWindow : Window
     {
-        public AuthWindow()
+        public delegate void IsAuth();
+        public static event IsAuth OnAuth;
+        public static Authorization User;
+        public List<Order> OrdList;
+        public static MainCoachWindow Auth(Authorization User)
+        {
+            MainCoachWindow.User = User;
+            return new MainCoachWindow();
+        }
+        public MainCoachWindow()
         {
             InitializeComponent();
-            FrAuthReg.Content = new AuthorizationPage();
-            MainWindow.OnAuth += () => this.Close();
-            MainCoachWindow.OnAuth += () => this.Close();
-            ManagementWindow.OnAuth += () => this.Close();
+            TblLogin.Text = User.Role.Title;
+            OnAuth.Invoke();
+            GetList();
+
         }
 
-        
-        private void TblLog_MouseDown(object sender, MouseButtonEventArgs e)
+        public void GetList()
         {
-            FrAuthReg.Content = new AuthorizationPage();
+            OrdList = EFClass.context.Order.Include("Client").ToList();
+            LvSchedul.ItemsSource = OrdList;
         }
-        private void TblReg_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            FrAuthReg.Content = new RegistrationPage();
-        }
+
         private void ToolBar_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.ChangedButton == MouseButton.Left)
